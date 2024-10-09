@@ -17,7 +17,7 @@ router.get('/lead', async (req, res) => {
     try {
         const leaderboard = await Leaderboard.find().sort({ score: -1 }).limit(10);
         console.log(leaderboard);
-        res.json(leaderboard);
+        res.json(leaderboard);  
     } catch (error) {
         console.error('Error retrieving leaderboard:', error);
         res.status(500).json({ error: 'Failed to retrieve leaderboard' });
