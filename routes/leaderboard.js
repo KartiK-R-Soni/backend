@@ -13,7 +13,7 @@ router.post('/api/leaderboard', async (req, res) => {
         res.status(500).json({ error: 'Failed to submit score' });
     }
 });
-router.get('/', async (req, res) => {
+router.get('/lead', async (req, res) => {
     try {
         const leaderboard = await Leaderboard.find().sort({ score: -1 }).limit(10);
         console.log(leaderboard);
